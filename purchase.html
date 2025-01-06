@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarah Lauren Holloway</title>
+  <style>
+    body {
+      font-family: cursive;
+      margin: 0;
+      padding: 0;
+      background-color: #a74f5c;
+      color: #2e2e2e;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #2e2e2e;
+    }
+
+    header menu {
+      margin-top: 10px;
+    }
+
+    header menu a {
+      text-decoration: none;
+      color: #2e2e2e;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    header menu a:hover {
+      color: #0078d4;
+    }
+
+    .product-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .product-images {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      margin-bottom: 20px;
+    }
+
+    .product-images .main-image {
+      max-width: 50%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .thumbnail-images {
+      display: flex;
+      gap: 10px;
+    }
+
+    .thumbnail-images img {
+      width: 75px;
+      height: auto;
+      border: 2px solid #e5e5e5;
+      cursor: pointer;
+    }
+
+    .thumbnail-images img:hover {
+      border-color: #0078d4;
+    }
+
+    .product-details {
+      text-align: left;
+    }
+
+    .product-details h2 {
+      font-size: 1.5rem;
+      color: #2e2e2e;
+    }
+
+    .product-details .price {
+      font-size: 1.25rem;
+      color: #2e2e2e;
+      margin: 10px 0;
+    }
+
+    .product-details .description {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #4a4a4a;
+      margin-bottom: 20px;
+    }
+
+    .purchase-form button {
+      background-color: #2e2e2e;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .purchase-form button:hover {
+      background-color: #0078d4;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      color: #2e2e2e;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-page">
+    <header>
+      <h1>Sarah Lauren Holloway</h1>
+      <menu style="padding-left: 0px">
+        <a href="about.html"> About</a> — <a href="works.html">Select Works</a> — <a href="/purchase">Designed for Purchase</a> — <a href="/ps">Pretty Secrets</a>
+      </menu>
+    </header>
+
+    <div class="product-images">
+      <div class="thumbnail-images">
+        <img src="morningglorylight.jpg" alt="Thumbnail 1">
+        <img src="" alt="Thumbnail 2">
+        <img src="" alt="Thumbnail 3">
+        <img src="" alt="Thumbnail 4">
+      </div>
+      <br><br>
+      <img src="morningglorylight.jpg" alt="Main Product Image" class="main-image">
+    </div>
+
+    <div class="product-details">
+      <h2>Product Title</h2>
+      <p class="price">$0.00</p>
+      <p class="description">This is a placeholder for the product description. Replace this text with your own description of the product.</p>
+      <form class="purchase-form" action="#" method="post">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+    <footer>
+      <p>Contact: sarah [at] sarahholloway.net</p>
+    </footer>
+  </div>
+</body>
+</html>
