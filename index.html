@@ -31,7 +31,7 @@
       position: absolute;
       inset: -60px;
       background: inherit;
-      filter: blur(40px) brightness(1.12) saturate(1.2);
+      filter: blur(50px) brightness(1.06) saturate(0.9) contrast(0.8);
     }
     .backdrop img {
       position: absolute;
@@ -41,13 +41,14 @@
       width: min(100vw, 105vh);
       height: min(100vh, 175vw);
       object-fit: cover;
+      filter: contrast(1.12);
       -webkit-mask-image:
-        linear-gradient(to right, transparent, #000 12%, #000 88%, transparent),
-        linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+        linear-gradient(to right, transparent, #000 25%, #000 75%, transparent),
+        linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
       -webkit-mask-composite: source-in;
       mask-image:
-        linear-gradient(to right, transparent, #000 12%, #000 88%, transparent),
-        linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+        linear-gradient(to right, transparent, #000 25%, #000 75%, transparent),
+        linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
       mask-composite: intersect;
     }
     .content {
