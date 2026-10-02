@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videos — Sarah Lauren Holloway</title>
+  <link rel="stylesheet" href="styles.css">
+  <script href="/thimble.js"></script>
+  <style>
+    .container {
+      width: 90%;
+      max-width: 900px;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .video-item {
+      background: white;
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    .video-item video {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      background: #000;
+      display: block;
+    }
+    .video-item p {
+      color: #555;
+      margin: 8px 0 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><a href="index.html">Sarah Lauren Holloway</a></h1>
+      <menu style="padding-left: 0px">
+        <a href="about.html">About</a> — <a href="works.html">Select Works</a> — Videos — <a href="/ps">Pretty Secrets</a>
+      </menu>
+    </header>
+
+    <div class="video-grid">
+      <div class="video-item">
+        <video controls playsinline preload="metadata">
+          <source src="joyofwoodworkingpt1.mov" type="video/mp4">
+          <source src="joyofwoodworkingpt1.mov" type="video/quicktime">
+        </video>
+        <p>Joy of Woodworking, Part 1</p>
+      </div>
+      <div class="video-item">
+        <video controls playsinline preload="metadata">
+          <source src="joyofwoodworkingpt2.mov" type="video/mp4">
+          <source src="joyofwoodworkingpt2.mov" type="video/quicktime">
+        </video>
+        <p>Joy of Woodworking, Part 2</p>
+      </div>
+      <div class="video-item">
+        <video controls playsinline preload="metadata">
+          <source src="joyofwoodworkingpt3.mov" type="video/mp4">
+          <source src="joyofwoodworkingpt3.mov" type="video/quicktime">
+        </video>
+        <p>Joy of Woodworking, Part 3</p>
+      </div>
+      <div class="video-item">
+        <video controls playsinline preload="metadata">
+          <source src="bigtree.mov" type="video/mp4">
+          <source src="bigtree.mov" type="video/quicktime">
+        </video>
+        <p>Big Tree</p>
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+</footer>
+</html>
