@@ -4,77 +4,104 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Videos — Sarah Lauren Holloway</title>
-  <link rel="stylesheet" href="styles.css">
   <script href="/thimble.js"></script>
   <style>
-    .container {
-      width: 90%;
-      max-width: 900px;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
     }
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      color: #0047ff;
     }
-    .video-item {
-      background: white;
-      padding: 10px;
-      border: 1px solid #ccc;
-      text-align: center;
+    /* Each video gets one full screen; scrolling snaps to the next one */
+    .reel {
+      height: 100vh;
+      height: 100svh;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
     }
-    .video-item video {
-      width: 100%;
+    .slide {
+      height: 100vh;
+      height: 100svh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 2vh 0;
+    }
+    .slide video {
+      height: 90vh;
+      height: 90svh;
+      max-width: 100vw;
       aspect-ratio: 9 / 16;
+      object-fit: contain;
       background: #000;
       display: block;
     }
-    .video-item p {
-      color: #555;
-      margin: 8px 0 2px;
+    .slide p {
+      margin: 0.6em 0 0;
+      font-size: 1.1rem;
+      color: #4d7cff;
     }
+    .home {
+      position: fixed;
+      top: 14px;
+      left: 18px;
+      z-index: 2;
+      color: #4d7cff;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+    .home:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1><a href="index.html">Sarah Lauren Holloway</a></h1>
-      <menu style="padding-left: 0px">
-        <a href="about.html">About</a> — <a href="works.html">Select Works</a> — Videos — <a href="/ps">Pretty Secrets</a>
-      </menu>
-    </header>
+  <a class="home" href="index.html">← home</a>
 
-    <div class="video-grid">
-      <div class="video-item">
-        <video controls playsinline preload="metadata">
-          <source src="joyofwoodworkingpt1.mov" type="video/mp4">
-          <source src="joyofwoodworkingpt1.mov" type="video/quicktime">
-        </video>
-        <p>Joy of Woodworking, Part 1</p>
-      </div>
-      <div class="video-item">
-        <video controls playsinline preload="metadata">
-          <source src="joyofwoodworkingpt2.mov" type="video/mp4">
-          <source src="joyofwoodworkingpt2.mov" type="video/quicktime">
-        </video>
-        <p>Joy of Woodworking, Part 2</p>
-      </div>
-      <div class="video-item">
-        <video controls playsinline preload="metadata">
-          <source src="joyofwoodworkingpt3.mov" type="video/mp4">
-          <source src="joyofwoodworkingpt3.mov" type="video/quicktime">
-        </video>
-        <p>Joy of Woodworking, Part 3</p>
-      </div>
-      <div class="video-item">
-        <video controls playsinline preload="metadata">
-          <source src="bigtree.mov" type="video/mp4">
-          <source src="bigtree.mov" type="video/quicktime">
-        </video>
-        <p>Big Tree</p>
-      </div>
-    </div>
-  </div>
+  <main class="reel">
+    <section class="slide">
+      <video controls playsinline preload="metadata">
+        <source src="joyofwoodworkingpt1.mov" type="video/mp4">
+        <source src="joyofwoodworkingpt1.mov" type="video/quicktime">
+      </video>
+      <p>Joy of Woodworking, Part 1</p>
+    </section>
+    <section class="slide">
+      <video controls playsinline preload="metadata">
+        <source src="joyofwoodworkingpt2.mov" type="video/mp4">
+        <source src="joyofwoodworkingpt2.mov" type="video/quicktime">
+      </video>
+      <p>Joy of Woodworking, Part 2</p>
+    </section>
+    <section class="slide">
+      <video controls playsinline preload="metadata">
+        <source src="joyofwoodworkingpt3.mov" type="video/mp4">
+        <source src="joyofwoodworkingpt3.mov" type="video/quicktime">
+      </video>
+      <p>Joy of Woodworking, Part 3</p>
+    </section>
+    <section class="slide">
+      <video controls playsinline preload="metadata">
+        <source src="bigtree.mov" type="video/mp4">
+        <source src="bigtree.mov" type="video/quicktime">
+      </video>
+      <p>Big Tree</p>
+    </section>
+  </main>
+
+  <script>
+    // Pause a video when you scroll away from it
+    const vids = document.querySelectorAll('.slide video');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (!e.isIntersecting) e.target.pause(); });
+    }, { threshold: 0.4 });
+    vids.forEach(v => io.observe(v));
+  </script>
 </body>
-<footer>
-</footer>
 </html>
